@@ -6,7 +6,7 @@ public class Tax extends Field{
 
     private int calculateAssets(Player p){
         int assets=p.getBalance();
-        assets+=p.getPropertyValues(p);
+        assets+=p.getPropertyValues();
         return assets;
     }
     @Override
@@ -30,7 +30,7 @@ public class Tax extends Field{
         float balance = p.getBalance();
         /*Todo: indkommenter følgende linje når metoden er skrevet: */
        float assets = calculateAssets(p);
-       float calcTax =( assets + balance )* 0.1f; // todo:  ændres til denne assignment: balance + assets * 0.1f; (Når der er kommet en værdi i 'assets')
+       float calcTax =( assets )* 0.1f; // todo:  ændres til denne assignment: balance + assets * 0.1f; (Når der er kommet en værdi i 'assets')
         p.pay((int) calcTax);
 
         return p.getName()+" Afviste at betale et fast beløb i skat. Vi har derfor trukket 10 % af "+p.getName()+"'s aktiver";

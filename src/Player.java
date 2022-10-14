@@ -7,16 +7,15 @@ public class Player {
 
     private int startPosition = 1;
     private int currentPosition = startPosition;
-/*TODO: tilføj en liste til at holde på det spilleren har købt (jvf. Task 1.c)*/
 
     public Player(String name, int amount) {
         this.name = name;
         account = new BankAccount(amount);
     }
 
-    public int getPropertyValues(Player p){
+    public int getPropertyValues(){
         int propertyValue=0;
-        for (int i = 0; i < p.deeds.size(); i++) {
+        for (int i = 0; i < deeds.size(); i++) {
             propertyValue+=deeds.get(i).getCost();
         }
         return propertyValue;
